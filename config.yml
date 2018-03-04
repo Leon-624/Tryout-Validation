@@ -1,0 +1,7 @@
+logging:
+  level: INFO
+  loggers:
+    org.liyanxu: DEBUG
+
+swagger:
+  resourcePackage: org.liyanxu.tryout.validation.resources
