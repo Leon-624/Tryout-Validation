@@ -35,17 +35,17 @@ public class PersonalInfoApiImplTest {
         api.setPerson(null);
     }
 
-    @Test(expected = Exception.class)
+    @Test(expected = NullPointerException.class)
     public void testNullArg2() {
         api.setPersonNotNull(null);
     }
 
-    @Test(expected = Exception.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testInvalidPerson() {
         api.setPerson(TestData.getInvalidPersonWithValidCar());
     }
 
-    @Test(expected = Exception.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testValidPersonWithInvalidCar() {
         api.setPerson(TestData.getValidPersonWithInvalidCar());
     }

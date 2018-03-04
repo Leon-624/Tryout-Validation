@@ -21,18 +21,30 @@ public class PersonalInfoApiImpl implements PersonalInfoApi {
         this.validator = Optional.ofNullable(validator);
     }
 
+    /**
+     * @param person can be null
+     */
     @Override
     public void setPerson(Person person) {
         validateArg(person);
         System.out.println(person);
     }
 
+    /**
+     * @param person cannot be null
+     */
     @Override
     public void setPersonNotNull(@NonNull Person person) {
         validateArg(person);
         System.out.println(person);
     }
 
+    /**
+     * Validate Java Beans.
+     * Throw IllegalArgumentException if any parameters are invalid.
+     * Do nothing if Validator is not present.
+     * @param objects
+     */
     private void validateArg(Object... objects) {
         Arrays.stream(objects).parallel().forEach(object -> {
             if(object != null) {
